@@ -1,3 +1,4 @@
+require 'pry'
 class Show < ActiveRecord::Base
 
 # QUERIES
@@ -7,7 +8,6 @@ class Show < ActiveRecord::Base
         self.maximum("rating")
     end
 
-# Q1 ==== Don't understand what's inside the parenthesis
     # Returns the SHOW with the highest rating
     def self.most_popular_show
         self.where("rating = ?", self.highest_rating).first
